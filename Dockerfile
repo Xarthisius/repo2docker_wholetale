@@ -1,4 +1,4 @@
-FROM gcr.io/kaniko-project/executor:v1.18.0 as kaniko
+FROM gcr.io/kaniko-project/executor:v1.18.0 AS kaniko
 
 FROM xarthisius/repo2docker:20240926
 
