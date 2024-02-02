@@ -1,5 +1,10 @@
-FROM wholetale/repo2docker@sha256:88fed9ca1167cf4ff0a91b73b44fa42a83aea30968193e429ce89fc2945ec9a2
+FROM gcr.io/kaniko-project/executor:v1.18.0 as kaniko
 
+FROM xarthisius/repo2docker:20240926
+
+RUN apk add --no-cache skopeo coreutils img
+
+COPY --from=kaniko /kaniko /kaniko
 COPY . /src
-RUN python3 -m pip install /src bdbag==1.6.1
+RUN python3 -m pip install /src bdbag==1.6.1 repo2kaniko
 COPY repo2docker_config.py /wholetale/repo2docker_config.py
