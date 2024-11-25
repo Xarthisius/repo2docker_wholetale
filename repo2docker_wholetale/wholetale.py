@@ -17,7 +17,6 @@ class WholeTaleBuildPack(PythonBuildPack):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.base_image = "docker.io/library/buildpack-deps:jammy"
 
     def binder_path(self, path):
         """
