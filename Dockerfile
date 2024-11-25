@@ -1,6 +1,6 @@
 FROM gcr.io/kaniko-project/executor:v1.18.0 AS kaniko
 
-FROM xarthisius/repo2docker:20240926
+FROM xarthisius/repo2docker:20241125
 
 RUN apk add --no-cache skopeo coreutils img
 
